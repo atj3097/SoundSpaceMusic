@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		CB77443B24157DBA003EC7D9 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443A24157DBA003EC7D9 /* UIUtilities.swift */; };
 		CB77443D24157DD2003EC7D9 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443C24157DD2003EC7D9 /* UIConstraints.swift */; };
 		CB77443F24157E10003EC7D9 /* MusicPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443E24157E10003EC7D9 /* MusicPlayerHelper.swift */; };
+		CB77444124158807003EC7D9 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77444024158807003EC7D9 /* MusicPlayerViewController.swift */; };
+		CB77444324159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB77444224159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 */; };
 		DA3048D68C5B8B3C00600D57 /* Pods_SoundSpaceMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FFAE859360C7CB52E7BD47 /* Pods_SoundSpaceMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		CB77443A24157DBA003EC7D9 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		CB77443C24157DD2003EC7D9 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
 		CB77443E24157E10003EC7D9 /* MusicPlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerHelper.swift; sourceTree = "<group>"; };
+		CB77444024158807003EC7D9 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		CB77444224159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rick Ross - Gold Roses (Audio) ft. Drake.mp3"; sourceTree = "<group>"; };
 		F734D0FEB58F33C009D94A45 /* Pods-SoundSpaceMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusicTests.release.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusicTests/Pods-SoundSpaceMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,7 @@
 		CB77440224157D5F003EC7D9 /* SoundSpaceMusic */ = {
 			isa = PBXGroup;
 			children = (
+				CB77444424159C1E003EC7D9 /* TestSongs */,
 				CB77443924157DA7003EC7D9 /* UIUtilities */,
 				CB77443624157D74003EC7D9 /* MusicHelpers */,
 				CB77440324157D5F003EC7D9 /* AppDelegate.swift */,
@@ -181,6 +186,7 @@
 			children = (
 				CB77443724157D9B003EC7D9 /* MusicPlayerView.swift */,
 				CB77443E24157E10003EC7D9 /* MusicPlayerHelper.swift */,
+				CB77444024158807003EC7D9 /* MusicPlayerViewController.swift */,
 			);
 			path = MusicHelpers;
 			sourceTree = "<group>";
@@ -194,6 +200,14 @@
 			path = UIUtilities;
 			sourceTree = "<group>";
 		};
+		CB77444424159C1E003EC7D9 /* TestSongs */ = {
+			isa = PBXGroup;
+			children = (
+				CB77444224159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 */,
+			);
+			path = TestSongs;
+			sourceTree = "<group>";
+		};
 		DFB348510F29B4C632E04E6D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +218,6 @@
 				3C1F15C31849640AA3C7D4A0 /* Pods-SoundSpaceMusicTests.debug.xcconfig */,
 				F734D0FEB58F33C009D94A45 /* Pods-SoundSpaceMusicTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -281,6 +294,7 @@
 				TargetAttributes = {
 					CB7743FF24157D5F003EC7D9 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					CB77441824157D5F003EC7D9 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -320,6 +334,7 @@
 				CB77441324157D5F003EC7D9 /* LaunchScreen.storyboard in Resources */,
 				CB77441024157D5F003EC7D9 /* Preview Assets.xcassets in Resources */,
 				CB77440D24157D5F003EC7D9 /* Assets.xcassets in Resources */,
+				CB77444324159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +469,7 @@
 				CB77440624157D5F003EC7D9 /* SceneDelegate.swift in Sources */,
 				CB77440B24157D5F003EC7D9 /* ContentView.swift in Sources */,
 				CB77443B24157DBA003EC7D9 /* UIUtilities.swift in Sources */,
+				CB77444124158807003EC7D9 /* MusicPlayerViewController.swift in Sources */,
 				CB77440924157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +636,7 @@
 			baseConfigurationReference = 3EA2F599832A38B26BB6D957 /* Pods-SoundSpaceMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SoundSpaceMusic/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -630,6 +647,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Adam.SoundSpaceMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundSpaceMusic/MusicHelpers/SoundSpaceMusic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -640,6 +659,7 @@
 			baseConfigurationReference = A1A622EC9D7F3AB225C10B70 /* Pods-SoundSpaceMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SoundSpaceMusic/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -650,6 +670,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Adam.SoundSpaceMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundSpaceMusic/MusicHelpers/SoundSpaceMusic-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

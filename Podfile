@@ -6,7 +6,8 @@ target 'SoundSpaceMusic' do
   use_frameworks!
 
   # Pods for SoundSpaceMusic
-	 pod 'SnapKit', '~> 5.0.0'
+	 pod 'SnapKit', '~> 5.0.0'  
+	pod 'AudioKit', '~> 4.0'
   target 'SoundSpaceMusicTests' do
     inherit! :search_paths
     # Pods for testing
