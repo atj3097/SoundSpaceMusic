@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5269B99C5E6DD7FDFF5C01EF /* Pods_SoundSpaceMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B975F1356D8F9CF361E0392 /* Pods_SoundSpaceMusicTests.framework */; };
+		72F2BC0E87212652F4BEABFB /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28449A0BC489A487D77D0421 /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework */; };
 		CB77440424157D5F003EC7D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77440324157D5F003EC7D9 /* AppDelegate.swift */; };
 		CB77440624157D5F003EC7D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77440524157D5F003EC7D9 /* SceneDelegate.swift */; };
 		CB77440924157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB77440724157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld */; };
@@ -20,6 +22,7 @@
 		CB77443B24157DBA003EC7D9 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443A24157DBA003EC7D9 /* UIUtilities.swift */; };
 		CB77443D24157DD2003EC7D9 /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443C24157DD2003EC7D9 /* UIConstraints.swift */; };
 		CB77443F24157E10003EC7D9 /* MusicPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77443E24157E10003EC7D9 /* MusicPlayerHelper.swift */; };
+		DA3048D68C5B8B3C00600D57 /* Pods_SoundSpaceMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FFAE859360C7CB52E7BD47 /* Pods_SoundSpaceMusic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2112F437D930C75083D43302 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusic-SoundSpaceMusicUITests.release.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusic-SoundSpaceMusicUITests/Pods-SoundSpaceMusic-SoundSpaceMusicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		28449A0BC489A487D77D0421 /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A55AE5273DF682B9DA40FE8 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusic-SoundSpaceMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusic-SoundSpaceMusicUITests/Pods-SoundSpaceMusic-SoundSpaceMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C1F15C31849640AA3C7D4A0 /* Pods-SoundSpaceMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusicTests.debug.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusicTests/Pods-SoundSpaceMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EA2F599832A38B26BB6D957 /* Pods-SoundSpaceMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusic.debug.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		4B975F1356D8F9CF361E0392 /* Pods_SoundSpaceMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundSpaceMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A622EC9D7F3AB225C10B70 /* Pods-SoundSpaceMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusic.release.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic.release.xcconfig"; sourceTree = "<group>"; };
+		C0FFAE859360C7CB52E7BD47 /* Pods_SoundSpaceMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundSpaceMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB77440024157D5F003EC7D9 /* SoundSpaceMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundSpaceMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB77440324157D5F003EC7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB77440524157D5F003EC7D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 		CB77443A24157DBA003EC7D9 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		CB77443C24157DD2003EC7D9 /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
 		CB77443E24157E10003EC7D9 /* MusicPlayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerHelper.swift; sourceTree = "<group>"; };
+		F734D0FEB58F33C009D94A45 /* Pods-SoundSpaceMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusicTests.release.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusicTests/Pods-SoundSpaceMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3048D68C5B8B3C00600D57 /* Pods_SoundSpaceMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5269B99C5E6DD7FDFF5C01EF /* Pods_SoundSpaceMusicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F2BC0E87212652F4BEABFB /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86A3432C8FD91C850E42FD30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0FFAE859360C7CB52E7BD47 /* Pods_SoundSpaceMusic.framework */,
+				28449A0BC489A487D77D0421 /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework */,
+				4B975F1356D8F9CF361E0392 /* Pods_SoundSpaceMusicTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB7743F724157D5F003EC7D9 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +118,8 @@
 				CB77441C24157D5F003EC7D9 /* SoundSpaceMusicTests */,
 				CB77442724157D5F003EC7D9 /* SoundSpaceMusicUITests */,
 				CB77440124157D5F003EC7D9 /* Products */,
+				DFB348510F29B4C632E04E6D /* Pods */,
+				86A3432C8FD91C850E42FD30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +194,20 @@
 			path = UIUtilities;
 			sourceTree = "<group>";
 		};
+		DFB348510F29B4C632E04E6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EA2F599832A38B26BB6D957 /* Pods-SoundSpaceMusic.debug.xcconfig */,
+				A1A622EC9D7F3AB225C10B70 /* Pods-SoundSpaceMusic.release.xcconfig */,
+				3A55AE5273DF682B9DA40FE8 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.debug.xcconfig */,
+				2112F437D930C75083D43302 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.release.xcconfig */,
+				3C1F15C31849640AA3C7D4A0 /* Pods-SoundSpaceMusicTests.debug.xcconfig */,
+				F734D0FEB58F33C009D94A45 /* Pods-SoundSpaceMusicTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB77442D24157D5F003EC7D9 /* Build configuration list for PBXNativeTarget "SoundSpaceMusic" */;
 			buildPhases = (
+				5BD28CA801501E529E4B1E48 /* [CP] Check Pods Manifest.lock */,
 				CB7743FC24157D5F003EC7D9 /* Sources */,
 				CB7743FD24157D5F003EC7D9 /* Frameworks */,
 				CB7743FE24157D5F003EC7D9 /* Resources */,
+				6A4F96F3EA2F593B4EC864BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB77443024157D5F003EC7D9 /* Build configuration list for PBXNativeTarget "SoundSpaceMusicTests" */;
 			buildPhases = (
+				2405665662B3C63551CB7D60 /* [CP] Check Pods Manifest.lock */,
 				CB77441524157D5F003EC7D9 /* Sources */,
 				CB77441624157D5F003EC7D9 /* Frameworks */,
 				CB77441724157D5F003EC7D9 /* Resources */,
@@ -209,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB77443324157D5F003EC7D9 /* Build configuration list for PBXNativeTarget "SoundSpaceMusicUITests" */;
 			buildPhases = (
+				F655F8E24A551B1271ABF4E1 /* [CP] Check Pods Manifest.lock */,
 				CB77442024157D5F003EC7D9 /* Sources */,
 				CB77442124157D5F003EC7D9 /* Frameworks */,
 				CB77442224157D5F003EC7D9 /* Resources */,
+				1BC9A817D20FC12FA2BE4D5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +338,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BC9A817D20FC12FA2BE4D5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic-SoundSpaceMusicUITests/Pods-SoundSpaceMusic-SoundSpaceMusicUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic-SoundSpaceMusicUITests/Pods-SoundSpaceMusic-SoundSpaceMusicUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic-SoundSpaceMusicUITests/Pods-SoundSpaceMusic-SoundSpaceMusicUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2405665662B3C63551CB7D60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundSpaceMusicTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BD28CA801501E529E4B1E48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundSpaceMusic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A4F96F3EA2F593B4EC864BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F655F8E24A551B1271ABF4E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoundSpaceMusic-SoundSpaceMusicUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB7743FC24157D5F003EC7D9 /* Sources */ = {
@@ -468,6 +617,7 @@
 		};
 		CB77442E24157D5F003EC7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EA2F599832A38B26BB6D957 /* Pods-SoundSpaceMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +637,7 @@
 		};
 		CB77442F24157D5F003EC7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1A622EC9D7F3AB225C10B70 /* Pods-SoundSpaceMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +657,7 @@
 		};
 		CB77443124157D5F003EC7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C1F15C31849640AA3C7D4A0 /* Pods-SoundSpaceMusicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +679,7 @@
 		};
 		CB77443224157D5F003EC7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F734D0FEB58F33C009D94A45 /* Pods-SoundSpaceMusicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +701,7 @@
 		};
 		CB77443424157D5F003EC7D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A55AE5273DF682B9DA40FE8 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -567,6 +721,7 @@
 		};
 		CB77443524157D5F003EC7D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2112F437D930C75083D43302 /* Pods-SoundSpaceMusic-SoundSpaceMusicUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
