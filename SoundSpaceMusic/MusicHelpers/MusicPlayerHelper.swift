@@ -12,7 +12,7 @@ import AVFoundation
 
 class MP3Player: NSObject, AVAudioPlayerDelegate {
     
-    var player:AVAudioPlayer?
+    var player: AVAudioPlayer?
     var currentTrackIndex = 0
     var tracks:[String] = [String]()
     

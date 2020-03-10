@@ -19,10 +19,13 @@ enum isPlaying {
 class MusicPlayerView: UIView {
     
     private var isMusicPlaying: isPlaying!
-    var mp3Player: MP3Player?
+    var playerMP3: MP3Player?
     var timer:Timer?
     var audioKitReader: AKAudioFile?
+    var audioManager: AudioManager!
     
+    
+
     lazy var songCover: UIImageView = {
         let imageView = UIImageView()
         let testImage = #imageLiteral(resourceName: "coverArt")
@@ -74,15 +77,16 @@ class MusicPlayerView: UIView {
         return button
     }()
     
-    lazy var timeSlider: UIProgressView = {
-        let progress = UIProgressView()
-        progress.tintColor = .white
+    lazy var audioScrubber: MusicPlayerScrubber = {
+        let progress = MusicPlayerScrubber()
+        progress.customizeSlider(audioPlayer: playerMP3!.player! )
+        progress.addTarget(self, action: #selector(tryScrubbing), for: .touchUpInside)
         return progress
     }()
     
     lazy var currentLabel: UILabel = {
         let label = UILabel()
-        UIUtilities.setUILabel(label, labelTitle: "\(timeSlider.progress)", size: 20, alignment: .left)
+        UIUtilities.setUILabel(label, labelTitle: "\(audioScrubber.value)", size: 20, alignment: .left)
         return label
     }()
     
@@ -97,6 +101,7 @@ class MusicPlayerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
+        audioManager = CoreAudioManager()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -105,21 +110,21 @@ class MusicPlayerView: UIView {
     }
     
     private func commonInit() {
+        playerMP3 = MP3Player()
         addSubViews()
         layoutConstraints()
-        mp3Player = MP3Player()
         isMusicPlaying = .notPlaying
         updateViews()
+//        timer = Timer(timeInterval: 0.01, target: self, selector: #selector(timerTick(_:)), userInfo: nil, repeats: true)
         backgroundColor = .darkGray
         songCover.layer.shadowColor = UIColor(red: 35/255, green: 46/255, blue: 33/255, alpha: 1).cgColor
         songCover.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         songCover.layer.shadowOpacity = 0.9
         songCover.layer.shadowRadius = 4
-        
     }
     
     func addSubViews() {
-        [songArtists,songCover,playButton,rewindButton,skipSongButton,timeSlider,songArtists,songTitle,currentLabel,downButton].forEach({addSubview($0)})
+        [songArtists,songCover,playButton,rewindButton,skipSongButton,audioScrubber,songArtists,songTitle,currentLabel,downButton].forEach({addSubview($0)})
     }
     
     
@@ -144,7 +149,7 @@ class MusicPlayerView: UIView {
             make.bottom.equalTo(songCover).offset(70)
         }
         
-        timeSlider.snp.makeConstraints{ make in
+        audioScrubber.snp.makeConstraints{ make in
             make.top.equalTo(songArtists).offset(50)
             make.width.equalTo(self).dividedBy(1.09)
             make.left.equalTo(self).offset(20)
@@ -152,7 +157,7 @@ class MusicPlayerView: UIView {
         
         currentLabel.snp.makeConstraints{ make in
             make.centerX.equalTo(self)
-            make.top.equalTo(timeSlider).offset(25)
+            make.top.equalTo(audioScrubber).offset(25)
         }
         
         playButton.snp.makeConstraints{ make in
@@ -161,6 +166,8 @@ class MusicPlayerView: UIView {
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
+        
+  
         
         skipSongButton.snp.makeConstraints{ make in
             make.right.equalTo(playButton).offset(100)
@@ -189,7 +196,7 @@ class MusicPlayerView: UIView {
     }
     
     func setTrackName(){
-          songArtists.text = mp3Player?.getCurrentTrackName()
+          songArtists.text = playerMP3?.getCurrentTrackName()
        }
     
     func startTimer(){
@@ -205,22 +212,28 @@ class MusicPlayerView: UIView {
       }
       
       func updateViews(){
-          currentLabel.text = mp3Player?.getCurrentTimeAsString()
-          if let progress = mp3Player?.getProgress() {
-              timeSlider.progress = progress
+          currentLabel.text = playerMP3?.getCurrentTimeAsString()
+          if let progress = playerMP3?.getProgress() {
+              audioScrubber.value = progress
           }
       }
+    
+  @objc func tryScrubbing() {
+    audioScrubber.scrubAudio(sender: audioScrubber, audioPlayer: (playerMP3?.player!)!)
+    audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
+    }
     
     
     @objc func playMusic() {
         switch isMusicPlaying {
         case .notPlaying:
-            mp3Player?.play()
+            playerMP3?.play()
             isMusicPlaying = .playing
             startTimer()
             playButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
         case .playing:
-            mp3Player?.pause()
+            playerMP3?.pause()
             isMusicPlaying = .notPlaying
             playButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         default:
