@@ -12,7 +12,9 @@ import AVFoundation
 class MusicPlayerScrubber: UISlider {
     //Sets minimum and maximum of Scrubber based on length of song
     func customizeSlider(audioPlayer: AVAudioPlayer) {
-        tintColor = .white
+        tintColor = SoundSpaceColors.lightGreen
+        thumbTintColor = SoundSpaceColors.white
+        thumbRect(forBounds:CGRect(x: 0, y: 0, width: 10, height: 10), trackRect: CGRect(x: 0, y: 0, width: 10, height: 10), value: 0.0)
         minimumValue = 0
         maximumValue = Float(audioPlayer.duration)
     }

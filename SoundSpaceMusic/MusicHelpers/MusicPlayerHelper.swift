@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+
 //MARK: Write Function To Get Songs From Firebase
 class MP3Player: NSObject, AVAudioPlayerDelegate {
     
@@ -48,6 +49,8 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
             }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SetTrackNameText"), object: nil)
       }
+    
+    
     
     func play() {
         if player?.isPlaying == false {

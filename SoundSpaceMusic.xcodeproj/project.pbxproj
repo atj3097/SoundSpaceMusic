@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		5269B99C5E6DD7FDFF5C01EF /* Pods_SoundSpaceMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B975F1356D8F9CF361E0392 /* Pods_SoundSpaceMusicTests.framework */; };
 		72F2BC0E87212652F4BEABFB /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28449A0BC489A487D77D0421 /* Pods_SoundSpaceMusic_SoundSpaceMusicUITests.framework */; };
+		CB58C2192419424400DAB727 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58C2182419424400DAB727 /* ContentView.swift */; };
+		CB58C21C241942BD00DAB727 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58C21B241942BD00DAB727 /* SongModel.swift */; };
+		CB58C21E2419448800DAB727 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB58C21D2419448800DAB727 /* GoogleService-Info.plist */; };
+		CB58C2202419693100DAB727 /* SoundSpaceColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58C21F2419693100DAB727 /* SoundSpaceColors.swift */; };
+		CB58C22224197AEC00DAB727 /* MusicVolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58C22124197AEC00DAB727 /* MusicVolumeSlider.swift */; };
 		CB77440424157D5F003EC7D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77440324157D5F003EC7D9 /* AppDelegate.swift */; };
 		CB77440624157D5F003EC7D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77440524157D5F003EC7D9 /* SceneDelegate.swift */; };
 		CB77440924157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB77440724157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld */; };
-		CB77440B24157D5F003EC7D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77440A24157D5F003EC7D9 /* ContentView.swift */; };
 		CB77440D24157D5F003EC7D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB77440C24157D5F003EC7D9 /* Assets.xcassets */; };
 		CB77441024157D5F003EC7D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB77440F24157D5F003EC7D9 /* Preview Assets.xcassets */; };
 		CB77441324157D5F003EC7D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB77441124157D5F003EC7D9 /* LaunchScreen.storyboard */; };
@@ -62,11 +66,15 @@
 		4B975F1356D8F9CF361E0392 /* Pods_SoundSpaceMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundSpaceMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A622EC9D7F3AB225C10B70 /* Pods-SoundSpaceMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundSpaceMusic.release.xcconfig"; path = "Target Support Files/Pods-SoundSpaceMusic/Pods-SoundSpaceMusic.release.xcconfig"; sourceTree = "<group>"; };
 		C0FFAE859360C7CB52E7BD47 /* Pods_SoundSpaceMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundSpaceMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB58C2182419424400DAB727 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB58C21B241942BD00DAB727 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		CB58C21D2419448800DAB727 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB58C21F2419693100DAB727 /* SoundSpaceColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSpaceColors.swift; sourceTree = "<group>"; };
+		CB58C22124197AEC00DAB727 /* MusicVolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVolumeSlider.swift; sourceTree = "<group>"; };
 		CB77440024157D5F003EC7D9 /* SoundSpaceMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundSpaceMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB77440324157D5F003EC7D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB77440524157D5F003EC7D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CB77440824157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundSpaceMusic.xcdatamodel; sourceTree = "<group>"; };
-		CB77440A24157D5F003EC7D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB77440C24157D5F003EC7D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB77440F24157D5F003EC7D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB77441224157D5F003EC7D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +167,14 @@
 			path = CoreAudioHelpers;
 			sourceTree = "<group>";
 		};
+		CB58C21A241942A700DAB727 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB58C21B241942BD00DAB727 /* SongModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CB7743F724157D5F003EC7D9 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +200,8 @@
 		CB77440224157D5F003EC7D9 /* SoundSpaceMusic */ = {
 			isa = PBXGroup;
 			children = (
+				CB58C21D2419448800DAB727 /* GoogleService-Info.plist */,
+				CB58C21A241942A700DAB727 /* Models */,
 				CB9A779B2415DACF00A2D2CB /* Audio */,
 				CB0B2DD32415CB4300BF2D57 /* CoreAudioHelpers */,
 				CB77444424159C1E003EC7D9 /* TestSongs */,
@@ -191,12 +209,12 @@
 				CB77443624157D74003EC7D9 /* MusicHelpers */,
 				CB77440324157D5F003EC7D9 /* AppDelegate.swift */,
 				CB77440524157D5F003EC7D9 /* SceneDelegate.swift */,
-				CB77440A24157D5F003EC7D9 /* ContentView.swift */,
 				CB77440C24157D5F003EC7D9 /* Assets.xcassets */,
 				CB77441124157D5F003EC7D9 /* LaunchScreen.storyboard */,
 				CB77441424157D5F003EC7D9 /* Info.plist */,
 				CB77440724157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld */,
 				CB77440E24157D5F003EC7D9 /* Preview Content */,
+				CB58C2182419424400DAB727 /* ContentView.swift */,
 			);
 			path = SoundSpaceMusic;
 			sourceTree = "<group>";
@@ -244,6 +262,8 @@
 				CB77443A24157DBA003EC7D9 /* UIUtilities.swift */,
 				CB77443C24157DD2003EC7D9 /* UIConstraints.swift */,
 				CB8A858F2417D7C400652D98 /* MusicPlayerScrubber.swift */,
+				CB58C21F2419693100DAB727 /* SoundSpaceColors.swift */,
+				CB58C22124197AEC00DAB727 /* MusicVolumeSlider.swift */,
 			);
 			path = UIUtilities;
 			sourceTree = "<group>";
@@ -392,6 +412,7 @@
 				CB77441024157D5F003EC7D9 /* Preview Assets.xcassets in Resources */,
 				CB77440D24157D5F003EC7D9 /* Assets.xcassets in Resources */,
 				CB77444324159B88003EC7D9 /* Rick Ross - Gold Roses (Audio) ft. Drake.mp3 in Resources */,
+				CB58C21E2419448800DAB727 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,15 +542,18 @@
 			files = (
 				CB77443F24157E10003EC7D9 /* MusicPlayerHelper.swift in Sources */,
 				CB77443824157D9B003EC7D9 /* MusicPlayerView.swift in Sources */,
+				CB58C2192419424400DAB727 /* ContentView.swift in Sources */,
 				CB9A77832415CC3900A2D2CB /* AudioEngineManager.m in Sources */,
 				CB77440424157D5F003EC7D9 /* AppDelegate.swift in Sources */,
 				CB8A85902417D7C400652D98 /* MusicPlayerScrubber.swift in Sources */,
 				CB9A77962415D28100A2D2CB /* FrequencyView.swift in Sources */,
 				CB9A77812415CC0A00A2D2CB /* CoreAudioManager.m in Sources */,
+				CB58C2202419693100DAB727 /* SoundSpaceColors.swift in Sources */,
 				CB77443D24157DD2003EC7D9 /* UIConstraints.swift in Sources */,
+				CB58C21C241942BD00DAB727 /* SongModel.swift in Sources */,
 				CB77440624157D5F003EC7D9 /* SceneDelegate.swift in Sources */,
+				CB58C22224197AEC00DAB727 /* MusicVolumeSlider.swift in Sources */,
 				CB9A777F2415CBCC00A2D2CB /* AudioSession.m in Sources */,
-				CB77440B24157D5F003EC7D9 /* ContentView.swift in Sources */,
 				CB77443B24157DBA003EC7D9 /* UIUtilities.swift in Sources */,
 				CB77444124158807003EC7D9 /* MusicPlayerViewController.swift in Sources */,
 				CB77440924157D5F003EC7D9 /* SoundSpaceMusic.xcdatamodeld in Sources */,

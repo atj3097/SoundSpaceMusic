@@ -7,7 +7,11 @@ target 'SoundSpaceMusic' do
 
   # Pods for SoundSpaceMusic
 	 pod 'SnapKit', '~> 5.0.0'  
-	pod 'AudioKit', '~> 4.0'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore' 
+	pod 'Firebase/Storage'   
+	pod 'Kingfisher', '~> 5.0'
+	pod 'EmptyDataSet-Swift', '~> 5.0.0'
   target 'SoundSpaceMusicTests' do
     inherit! :search_paths
     # Pods for testing

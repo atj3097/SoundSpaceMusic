@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "409945B2-97BB-4F53-AEF4-F14C18822F28"
+            uuid = "D1D2A398-BB21-4740-B82B-61BFC7DC685A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SoundSpaceMusic/MusicHelpers/MusicPlayerView.swift"
+            filePath = "SoundSpaceMusic/Models/SongModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "updateViews()"
-            landmarkType = "7">
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

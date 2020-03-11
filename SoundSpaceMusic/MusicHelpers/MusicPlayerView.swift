@@ -9,23 +9,53 @@
 import UIKit
 import SnapKit
 import AVFoundation
-import AudioKit
+
 
 enum isPlaying {
     case playing
     case notPlaying
 }
 
+enum VolumePresent{
+    case volumeIsChanging
+    case volumeIsDone
+}
+
+enum RewindOrSkipBack {
+    case rewindToBeginning
+    case skipToPreviousSong
+}
+
 class MusicPlayerView: UIView {
     
     private var isMusicPlaying: isPlaying!
+    private var isVolumeChanging: VolumePresent!
+    private var rewindOrPrev: RewindOrSkipBack!
     var playerMP3: MP3Player?
     var timer:Timer?
-    var audioKitReader: AKAudioFile?
     var audioManager: AudioManager!
     
+    //MARK: UI Objects
+    lazy var volumeView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
     
-
+    lazy var volumeBar: VolumeSlider = {
+        let slider = VolumeSlider()
+        slider.setInitialValues(audioPlayer: playerMP3!.player!)
+        slider.addTarget(self, action: #selector(changeVolume), for: .touchUpInside)
+        return slider
+    }()
+    
+    lazy var volumeButton: UIButton =  {
+        let button = UIButton()
+        let image = #imageLiteral(resourceName: "icons8-low-volume-100")
+        button.setImage(image, for: .normal)
+        UIUtilities.setUpButton(button, title: "", backgroundColor: .clear, target: self, action: #selector(showVolumeBar))
+        return button
+    }()
     lazy var songCover: UIImageView = {
         let imageView = UIImageView()
         let testImage = #imageLiteral(resourceName: "coverArt")
@@ -97,7 +127,8 @@ class MusicPlayerView: UIView {
         button.setImage(image, for: .normal)
         return button
     }()
-
+    
+    //MARK: Lifecycle
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -111,33 +142,63 @@ class MusicPlayerView: UIView {
     
     private func commonInit() {
         playerMP3 = MP3Player()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(rewindMusicTapGesture(gesture:)))
         playerMP3?.audioScrubber = audioScrubber
+        isVolumeChanging = .volumeIsDone
+        rewindOrPrev = .rewindToBeginning
         audioScrubber.maximumValue = Float((playerMP3?.player!.duration)!)
         addSubViews()
+        rewindButton.addGestureRecognizer(tap)
+        volumeView.isHidden = true
+        volumeBar.isHidden = true
         layoutConstraints()
         isMusicPlaying = .notPlaying
         updateViews()
-//        timer = Timer(timeInterval: 0.05, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
-//        startTimer()
-        backgroundColor = .darkGray
+        backgroundColor = SoundSpaceColors.white
         songCover.layer.shadowColor = UIColor(red: 35/255, green: 46/255, blue: 33/255, alpha: 1).cgColor
         songCover.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         songCover.layer.shadowOpacity = 0.9
         songCover.layer.shadowRadius = 4
+        volumeView.layer.shadowColor = UIColor(red: 35/255, green: 46/255, blue: 33/255, alpha: 1).cgColor
+        volumeView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        volumeView.layer.shadowOpacity = 0.9
+        volumeView.layer.shadowRadius = 4
+        
     }
-    
+    //MARK: Private Functions
     func addSubViews() {
-        [songArtists,songCover,playButton,rewindButton,skipSongButton,audioScrubber,songArtists,songTitle,currentLabel,downButton].forEach({addSubview($0)})
+        [songArtists,songCover,playButton,rewindButton,skipSongButton,audioScrubber,songArtists,songTitle,currentLabel,downButton,volumeView, volumeBar, volumeButton].forEach({addSubview($0)})
     }
     
     
     func layoutConstraints() {
+        volumeView.snp.makeConstraints{ make in
+            make.top.equalTo(songCover)
+            make.left.equalTo(songCover)
+            make.width.equalTo(songCover)
+            make.height.equalTo(50)
+        }
+        
+        volumeBar.snp.makeConstraints{ make in
+            make.top.equalTo(volumeView)
+            make.left.equalTo(volumeView)
+            make.width.equalTo(volumeView)
+            make.height.equalTo(volumeView)
+        }
         
         songCover.snp.makeConstraints{ make in
             make.centerX.equalTo(self)
             make.top.equalTo(self).offset(75)
             make.width.equalTo(self).dividedBy(1.05)
             make.height.equalTo(self).dividedBy(2.5)
+        }
+        
+        volumeButton.snp.makeConstraints{ make in
+            make.right.equalTo(songCover)
+            make.bottom.equalTo(songArtists)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
+            
         }
         
         songTitle.snp.makeConstraints{ make in
@@ -197,7 +258,7 @@ class MusicPlayerView: UIView {
             make.width.equalTo(playButton)
         }
     }
-    
+    //MARK: Music Functions
     func setTrackName(){
           songArtists.text = playerMP3?.getCurrentTrackName()
        }
@@ -216,15 +277,17 @@ class MusicPlayerView: UIView {
       
       func updateViews(){
           currentLabel.text = playerMP3?.getCurrentTimeAsString()
-          if let progress = playerMP3?.getProgress() {
-            print(playerMP3?.player?.currentTime)
-            audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
+          if let progress = playerMP3?.getProgress() {            audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
           }
       }
-    
+    //MARK: Objc Functions
   @objc func tryScrubbing() {
     audioScrubber.scrubAudio(sender: audioScrubber, audioPlayer: (playerMP3?.player!)!)
     audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
+    let image = #imageLiteral(resourceName: "pause")
+    playButton.setImage(image, for: .normal)
+    isMusicPlaying = .playing
+    startTimer()
     }
     
     
@@ -245,22 +308,72 @@ class MusicPlayerView: UIView {
         }
     }
 
-    
+    @objc func changeVolume() {
+        volumeBar.changeVolume(audioPlayer: playerMP3!.player!)
+    }
     @objc func showMenu() {
         
+    }
+    
+    @objc func showVolumeBar() {
+//MARK: TO DO: Make this an animated transition
+        switch isVolumeChanging {
+        case .volumeIsChanging:
+            volumeView.isHidden = true
+            volumeBar.isHidden = true
+            isVolumeChanging = .volumeIsDone
+        case .volumeIsDone:
+            volumeView.isHidden = false
+            volumeBar.isHidden = false
+            isVolumeChanging = .volumeIsChanging
+        default:
+            print("Volume view not showing")
+        }
     }
     
     @objc func fastForwardMusic() {
         
     }
-    
+    @objc func rewindMusicTapGesture(gesture: UIGestureRecognizer) {
+        if let tapGesture = gesture as? UITapGestureRecognizer {
+            switch tapGesture.numberOfTouches {
+            case 1:
+                print("")
+                playerMP3?.player?.currentTime = TimeInterval(exactly: 0.0)!
+                audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
+                rewindOrPrev = .skipToPreviousSong
+            case 2:
+                //MARK: Add Go back to previous song functionality
+                print("Go to previous song")
+            default:
+                print("Tap Gesture Not Recognized")
+            }
+        }
+    }
     @objc func rewindMusic() {
+        
+        switch rewindOrPrev {
+        case .rewindToBeginning:
+//            guard playerMP3?.player?.currentTime != TimeInterval(0.0) else {
+//                rewindOrPrev = .skipToPreviousSong
+//                //Call previous song function
+//                print("Go back to previous song")
+//                return
+//            }
+            playerMP3?.player?.currentTime = TimeInterval(exactly: 0.0)!
+            audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
+            rewindOrPrev = .skipToPreviousSong
+        case .skipToPreviousSong:
+            //MARK: Add Go back to previous song functionality
+            print("Go to previous song")
+        default:
+            print("No rewind")
+        }
         
     }
     
     func updateSlider() {
         audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
     }
-    
-    
+
 }
