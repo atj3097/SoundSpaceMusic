@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import AVFoundation
-
+//MARK: Write Function To Get Songs From Firebase
 class MP3Player: NSObject, AVAudioPlayerDelegate {
+    
     var audioScrubber: MusicPlayerScrubber!
     var player: AVAudioPlayer?
     var currentTrackIndex = 0
@@ -20,7 +21,6 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         tracks = FileReader.readFiles()
         super.init()
         queueTrack();
-        
     }
     
     func queueTrack(){
@@ -41,7 +41,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     
         
             if let hasError = error {
-            //SHOW ALERT OR SOMETHING
+            //MARK: SHOW ALERT OR SOMETHING
             } else {
                 player?.delegate = self
                 player?.prepareToPlay()
@@ -52,10 +52,8 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     func play() {
         if player?.isPlaying == false {
              player?.play()
-            audioScrubber.updateSlider(audioPlayer: player!)
     }
-        
-    }
+}
     
     func stop(){
         if player?.isPlaying == true {
@@ -72,6 +70,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     
     func nextSong(songFinishedPlaying:Bool){
         var playerWasPlaying = false
+        
         if player?.isPlaying == true {
             player?.stop()
             playerWasPlaying = true
@@ -85,7 +84,6 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         if playerWasPlaying || songFinishedPlaying {
             player?.play()
         }
-        
     }
     
     func previousSong(){

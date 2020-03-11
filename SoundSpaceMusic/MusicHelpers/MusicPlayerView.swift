@@ -115,8 +115,9 @@ class MusicPlayerView: UIView {
         addSubViews()
         layoutConstraints()
         isMusicPlaying = .notPlaying
-        updateViews()
-        timer = Timer(timeInterval: 0.01, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+//        updateViews()
+//        timer = Timer(timeInterval: 0.05, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
+//        startTimer()
         backgroundColor = .darkGray
         songCover.layer.shadowColor = UIColor(red: 35/255, green: 46/255, blue: 33/255, alpha: 1).cgColor
         songCover.layer.shadowOffset = CGSize(width: 0, height: 1.0)
@@ -201,7 +202,7 @@ class MusicPlayerView: UIView {
        }
     
     func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
     }
     
     @objc func swipePlayerAway() {
@@ -215,6 +216,7 @@ class MusicPlayerView: UIView {
       func updateViews(){
           currentLabel.text = playerMP3?.getCurrentTimeAsString()
           if let progress = playerMP3?.getProgress() {
+            audioScrubber.value = progress
 //              audioScrubber.value = progress
           }
       }
@@ -232,7 +234,7 @@ class MusicPlayerView: UIView {
             isMusicPlaying = .playing
             startTimer()
             playButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            updateSlider()
+//            updateSlider()
         case .playing:
             playerMP3?.pause()
             isMusicPlaying = .notPlaying
@@ -255,9 +257,9 @@ class MusicPlayerView: UIView {
         
     }
     
-    @objc func updateSlider() {
-        audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
-    }
+//    @objc func updateSlider() {
+//        audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
+//    }
     
     
 }
