@@ -13,8 +13,8 @@ class MusicPlayerScrubber: UISlider {
     //Sets minimum and maximum of Scrubber based on length of song
     func customizeSlider(audioPlayer: AVAudioPlayer) {
         tintColor = .white
-//        minimumValue = 0
-//        maximumValue = Float(audioPlayer.duration)
+        minimumValue = 0
+        maximumValue = Float(audioPlayer.duration)
     }
     
     //Goes through the audio - allows to skip or rewind

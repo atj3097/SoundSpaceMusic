@@ -112,10 +112,11 @@ class MusicPlayerView: UIView {
     private func commonInit() {
         playerMP3 = MP3Player()
         playerMP3?.audioScrubber = audioScrubber
+        audioScrubber.maximumValue = Float((playerMP3?.player!.duration)!)
         addSubViews()
         layoutConstraints()
         isMusicPlaying = .notPlaying
-//        updateViews()
+        updateViews()
 //        timer = Timer(timeInterval: 0.05, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
 //        startTimer()
         backgroundColor = .darkGray
@@ -202,7 +203,7 @@ class MusicPlayerView: UIView {
        }
     
     func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 01.0, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
     }
     
     @objc func swipePlayerAway() {
@@ -216,8 +217,8 @@ class MusicPlayerView: UIView {
       func updateViews(){
           currentLabel.text = playerMP3?.getCurrentTimeAsString()
           if let progress = playerMP3?.getProgress() {
-            audioScrubber.value = progress
-//              audioScrubber.value = progress
+            print(playerMP3?.player?.currentTime)
+            audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
           }
       }
     
@@ -257,17 +258,9 @@ class MusicPlayerView: UIView {
         
     }
     
-//    @objc func updateSlider() {
-//        audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
-//    }
+    func updateSlider() {
+        audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
+    }
     
     
 }
-
-
-
-
-
-
-
-
