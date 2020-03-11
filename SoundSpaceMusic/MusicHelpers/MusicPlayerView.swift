@@ -111,11 +111,12 @@ class MusicPlayerView: UIView {
     
     private func commonInit() {
         playerMP3 = MP3Player()
+        playerMP3?.audioScrubber = audioScrubber
         addSubViews()
         layoutConstraints()
         isMusicPlaying = .notPlaying
         updateViews()
-//        timer = Timer(timeInterval: 0.01, target: self, selector: #selector(timerTick(_:)), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 0.01, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
         backgroundColor = .darkGray
         songCover.layer.shadowColor = UIColor(red: 35/255, green: 46/255, blue: 33/255, alpha: 1).cgColor
         songCover.layer.shadowOffset = CGSize(width: 0, height: 1.0)
@@ -214,7 +215,7 @@ class MusicPlayerView: UIView {
       func updateViews(){
           currentLabel.text = playerMP3?.getCurrentTimeAsString()
           if let progress = playerMP3?.getProgress() {
-              audioScrubber.value = progress
+//              audioScrubber.value = progress
           }
       }
     
@@ -231,7 +232,7 @@ class MusicPlayerView: UIView {
             isMusicPlaying = .playing
             startTimer()
             playButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            audioScrubber.updateSlider(audioPlayer: playerMP3!.player!)
+            updateSlider()
         case .playing:
             playerMP3?.pause()
             isMusicPlaying = .notPlaying
@@ -252,6 +253,10 @@ class MusicPlayerView: UIView {
     
     @objc func rewindMusic() {
         
+    }
+    
+    @objc func updateSlider() {
+        audioScrubber.value = Float((playerMP3?.player!.currentTime)!)
     }
     
     

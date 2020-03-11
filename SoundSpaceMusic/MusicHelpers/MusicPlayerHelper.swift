@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 
 class MP3Player: NSObject, AVAudioPlayerDelegate {
-    
+    var audioScrubber: MusicPlayerScrubber!
     var player: AVAudioPlayer?
     var currentTrackIndex = 0
     var tracks:[String] = [String]()
@@ -52,6 +52,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     func play() {
         if player?.isPlaying == false {
              player?.play()
+            audioScrubber.updateSlider(audioPlayer: player!)
     }
         
     }

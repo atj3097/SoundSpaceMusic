@@ -43,7 +43,7 @@ class MusicPlayerScrubber: UISlider {
     
     //Increments the audio slider 
     func updateSlider(audioPlayer: AVAudioPlayer) {
-        value = Float(audioPlayer.currentTime)
+        value += Float(audioPlayer.currentTime)
     }
     
     
